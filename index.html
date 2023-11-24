@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+<body>
+    <h1>Top of root</h1>
+    <div id="root">
+        <h1>Hello World</h1>   <!-- h1 is replace by react -->
+    </div>      <!-- here h1 tag created by js and it is injected -->
+    <h1>below of root</h1>  <!-- react is only replaced by root -->
+    
+    <!-- <script>
+        const heading=document.createElement("h1")
+        heading.innerHTML="Hello World from Javascript!"
+
+        const root=document.getElementById("root")
+        root.appendChild(heading)
+    </script> -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> <!-- this is the core file of react -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>  <!-- this is the react library which is useful for DOM operation -->
+
+    <script src="./app.js"></script>
+</body>
+</html>
