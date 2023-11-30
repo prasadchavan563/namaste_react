@@ -1,2 +1,10 @@
 list commit id------------git log --pretty=oneline
 move to another id ----------git checkout id
+
+
+
+2ce2df1721234c8b0555cce47a24b3b7cd2f4089 (HEAD) third episode updated
+a6bdd589469729abb5dc9f5cdea2dbe8f527bbce (origin/main, origin/HEAD, main) second tutorial updated
+436facf7aabadaca3638420cfee9489bdd72d315 second tutorial
+bd54857b3a0f2a94ab262d12fa91923182fdeeaa first episode
+017e15f3e56779ccc5be2b4c0315760f36d91aa5 Initial commit
