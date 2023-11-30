@@ -1,33 +1,50 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
-// const heading=React.createElement("h1",
-// {id:'col'},
-// "Hello World from React!") //children
-//         // {} object will give you attributes to your tags attribute means giving id or class {id:'root'}
 
-// console.log(heading);  //got object over here
 
-// const root=ReactDOM.createRoot(document.getElementById("root"))
+const heading=React.createElement("h1",{id:"root1"},"This is react Element")   //object
+const root=ReactDOM.createRoot(document.getElementById('root'))
 
-// root.render(heading) //render method job is create the object and convert it to the heading tag and put it that browser understood
+//JSX (transpiled before reaches the JS) - PARCEL -Bable
 
-const parent = React.createElement("div", { id: "parent" },
-    [React.createElement("div", { id: "child1" },
-        [React.createElement("h1", {}, "this is h1 tag"),
-        React.createElement("h2", {}, "this is h2 tag")]),
- 
-    React.createElement("div", { id: "child2" },
-        [React.createElement("h1", {}, "this is h1 tag"),
-        React.createElement("h2", {}, "this is h2 tag")])
-    ]
+//JSX => Bable transpiles it to React.createElement => ReactElement- JS Object => HTMLElement(render)
+
+const head=(
+    <div>
+        <h1>Hi Inside Div</h1>
+        {heading}                {/* jsx   head is an react element*/}
+    </div>
 )
 
-console.log(parent);
+const span=<span>Inside span</span>
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(parent)  //everything is render inside this root element
+const HeadComponent=()=>{
+    return (
+        <div>
+            <h1>Inside HeadComponent</h1>
+            {head}
+        </div>
+    )
+}
+
+const HeadComponent1=()=>(
+        <div>
+            <h1>Inside HeadComponent1</h1>
+            {head}
+            <HeadComponent />
+        </div>
+)
+
+const HeadComponent2=()=><div><h1>Inside HeadComponent2, {span}</h1>{head} <HeadComponent1 /></div>
 
 
-//its is looking tedious so JSX come into picture
+const HeadComponent3=()=>(
+    <div>
+        <h1>Inside HeadComponent3</h1>
+        {head}
+        {HeadComponent2()}
+    </div>
+)
 
-// ReacteEement(object)=>HTMLAllCollection(browser)
+
+root.render(<HeadComponent3 />)

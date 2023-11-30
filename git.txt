@@ -1,0 +1,2 @@
+list commit id------------git log --pretty=oneline
+move to another id ----------git checkout id
